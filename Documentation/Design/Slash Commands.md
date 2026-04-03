@@ -43,6 +43,20 @@ Steps executed in order:
 
 The commit is co-authored by Claude (`Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>`).
 
+### `/publish`
+
+**File:** `.claude/commands/publish.md`
+
+Pushes `master` to `origin` on GitHub. Intended to be run after `/promote`.
+
+Steps executed in order:
+
+1. **Guard** — refuses to run unless on `master`
+2. **Remote check** — verifies `origin` is configured
+3. **Unpushed commits** — lists commits not yet on remote, asks for confirmation before pushing
+4. **Push** — `git push origin master`; stops and reports on failure, never force-pushes
+5. **Report** — prints commit count, HEAD SHA, and remote URL
+
 ## Adding New Commands
 
 1. Create `.claude/commands/<name>.md`

@@ -72,3 +72,31 @@ No arguments needed. Run it from any feature branch when you're ready to merge.
 - Always run from a feature branch (`feature/...`), never from `master`
 - The commit will be co-authored by Claude
 - To delete the feature branch after merging: `git branch -d <branch-name>`
+
+---
+
+## /publish
+
+Pushes `master` to GitHub. Run this after `/promote` when you're ready to share.
+
+### Usage
+
+```
+/publish
+```
+
+No arguments needed. Must be on `master`.
+
+### What it does
+
+1. Refuses to run if you're not on `master`
+2. Checks that a remote named `origin` is configured
+3. Shows the list of unpushed commits and asks you to confirm
+4. Pushes to `origin/master`
+5. Reports the result
+
+### Notes
+
+- Always run `/promote` first to merge your feature branch
+- Will never force-push — if the push is rejected, it stops and reports the error
+- To check what would be pushed before running: `git log origin/master..HEAD --oneline`

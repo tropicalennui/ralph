@@ -27,7 +27,7 @@ Used for project documentation. Plugins:
 ## Integrations
 
 - **Jira Cloud** — `tropicalennui.atlassian.net`, project key `AEI`. MCP via custom `mcp-jira` server (`mcp-jira/index.js`). Falls back to REST API if MCP unavailable.
-- **ServiceNow REST API** — for interacting with the dev instance during build. OAuth 2.0 with a dedicated web service account. Setup pending.
+- **ServiceNow REST API** — MCP via custom `mcp-snow` server (`mcp-snow/index.js`). Basic auth with `svc.claude` service account. Credentials in `.mcp.json` (gitignored).
 
 ## Jira Conventions
 
@@ -56,7 +56,7 @@ When building or modifying a feature, create or update all three as part of the 
 ## Project Setup Tasks
 
 - [x] Configure Jira Cloud integration
-- [ ] Configure ServiceNow API integration
+- [x] Configure ServiceNow API integration
 - [ ] Define documentation structure and Obsidian templates
 
 ## Key Design Decisions

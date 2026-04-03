@@ -1,6 +1,6 @@
-# ServiceNow–Claude Integration
+# Ralph
 
-A collection of ServiceNow scoped applications and tooling enabling Claude to interact with and build on ServiceNow. The first deliverable is **Actual Easy Import** — a catalog item allowing users to import data to any configured table without requiring `import_admin` permissions.
+A personal development workspace connecting Claude to ServiceNow, Jira, Obsidian, and other tools. Features are tracked as ideas in `Documentation/Ideas/` and delivered as scoped applications, integrations, and tooling.
 
 ## ServiceNow Instance
 
@@ -11,10 +11,11 @@ A collection of ServiceNow scoped applications and tooling enabling Claude to in
 ## Workspace Layout
 
 ```
-ActualEasyImport/
+Ralph/
 ├── CLAUDE.md
 ├── mcp-jira/        # Custom Jira MCP server
 ├── mcp-snow/        # Custom ServiceNow MCP server
+├── tools/           # Utility tools (page capture, etc.)
 └── Documentation/   # Obsidian documentation vault
 ```
 
@@ -59,7 +60,3 @@ When building or modifying a feature, create or update all three as part of the 
 - [x] Configure ServiceNow API integration
 - [ ] Define documentation structure and Obsidian templates
 
-## Key Design Decisions
-
-- **Actual Easy Import**: No `import_admin` requirement — permissions enforced at the target table level
-- Delivered as catalog items within scoped apps

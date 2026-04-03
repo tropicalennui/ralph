@@ -1,4 +1,8 @@
-# Jira MCP Server — Technical Design
+---
+type: Technical Design
+user-guide: "[[Jira MCP Server User Guide]]"
+---
+
 
 ## Purpose
 

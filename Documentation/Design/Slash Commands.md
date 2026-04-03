@@ -1,5 +1,7 @@
-# Slash Commands — Technical Design
-
+---
+type: Technical Design
+user-guide: "[[Slash Command User Guide|Slash Command User Guide]]"
+---
 ## Purpose
 
 Custom slash commands that extend Claude Code with workspace-specific workflows. Defined as Markdown prompt files in `.claude/commands/` and invoked by typing `/command-name` in the Claude Code chat.

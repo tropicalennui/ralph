@@ -25,5 +25,4 @@ The Jira MCP server gives Claude the ability to manage issues in the **ServiceNo
 
 Credentials are stored in `.mcp.json` (gitignored). If setting up on a new machine, copy `.mcp.json` from a working environment or create it from `.secrets`.
 
-If the MCP server fails to load, Claude falls back to the Jira REST API directly:
-`https://tropicalennui.atlassian.net/rest/api/3/`
+If the MCP server fails to load, Claude falls back to the Jira REST API directly. The base URL is in `CLAUDE.local.md`.

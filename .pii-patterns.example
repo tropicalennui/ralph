@@ -1,0 +1,15 @@
+# PII patterns for this workspace
+# Each non-empty, non-comment line is a regex matched against staged content.
+# Copy this file to .pii-patterns and fill in your own values.
+
+# Atlassian subdomain (e.g. yourname)
+# yourname
+
+# ServiceNow PDI hostname (e.g. dev123456\.service-now\.com)
+# dev123456\.service-now\.com
+
+# Jira account ID
+# [0-9a-f]{24}
+
+# OS username in paths (e.g. /jsmith/)
+# /jsmith/

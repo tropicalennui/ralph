@@ -3,6 +3,6 @@
   "version": "1.0.0",
   "description": "ServiceNow–Claude Integration — root test runner",
   "scripts": {
-    "test": "node --test tools/page-capture/server/test/**/*.test.js"
+    "test": "node --test mcp-jira/test/**/*.test.js mcp-snow/test/**/*.test.js tools/page-capture/server/test/**/*.test.js"
   }
 }

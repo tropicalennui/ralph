@@ -1,5 +1,6 @@
 .mcp.json
+CLAUDE.local.md
 .claude/settings.local.json
 .secrets
 node_modules/
-.obsidian/
+Documentation/.obsidian/

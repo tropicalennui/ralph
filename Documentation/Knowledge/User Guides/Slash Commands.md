@@ -1,5 +1,6 @@
-# Slash Commands
-
+---
+type: User Guide
+---
 Custom slash commands available in this workspace. Type them directly in the Claude Code chat.
 
 ---

@@ -1,37 +1,14 @@
 {
   "main": {
-    "id": "ba990f903fc3d90e",
+    "id": "6258cb190b1d0374",
     "type": "split",
     "children": [
       {
-        "id": "440b0ca592b0cba8",
+        "id": "ba053c9e32cb3507",
         "type": "tabs",
         "children": [
           {
-            "id": "d9104b38a5ac10d5",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
-            }
-          }
-        ]
-      }
-    ],
-    "direction": "vertical"
-  },
-  "left": {
-    "id": "46d302e3f5cf7b96",
-    "type": "split",
-    "children": [
-      {
-        "id": "914b1d0ed3070d19",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "51658ea5b2adea21",
+            "id": "5fa838f254808920",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -44,7 +21,48 @@
             }
           },
           {
-            "id": "2b7da5704e886903",
+            "id": "3a864cddcb7df534",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Knowledge/Acquired/ServiceNow Developer Learn/Exercise Add a Header to Obtain Session Debug.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Exercise Add a Header to Obtain Session Debug"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "e1f09efe901b2267",
+    "type": "split",
+    "children": [
+      {
+        "id": "ed3d7aa0136a5d92",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "64bfe987d185fd96",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "9be1578e385e65d6",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -61,7 +79,7 @@
             }
           },
           {
-            "id": "b3f4426162d3aaa8",
+            "id": "5e34f128ff1396de",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -77,15 +95,15 @@
     "width": 300
   },
   "right": {
-    "id": "1601447b2ef22319",
+    "id": "8dc00de86bb1424b",
     "type": "split",
     "children": [
       {
-        "id": "2ac40ba52ac82acf",
+        "id": "a7a03ff78b469a70",
         "type": "tabs",
         "children": [
           {
-            "id": "13f34ec3d1765e4c",
+            "id": "5c9b4c0a8797a1a7",
             "type": "leaf",
             "state": {
               "type": "backlink",
@@ -103,7 +121,7 @@
             }
           },
           {
-            "id": "fa363faf9e9f7255",
+            "id": "5aa503812e62d862",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
@@ -116,7 +134,7 @@
             }
           },
           {
-            "id": "f22c07d48c47a1fb",
+            "id": "c552e3e83d0243ec",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -131,7 +149,7 @@
             }
           },
           {
-            "id": "f5d1d7b0628dc056",
+            "id": "ebe7a4b58b24e33b",
             "type": "leaf",
             "state": {
               "type": "all-properties",
@@ -145,18 +163,17 @@
             }
           },
           {
-            "id": "529892eab11c1237",
+            "id": "7cd104f97f3a394d",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "Untitled.base",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Untitled"
+              "title": "Outline"
             }
           }
         ]
@@ -174,15 +191,31 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "bases:Create new base": false
+      "bases:Create new base": false,
+      "templater-obsidian:Templater": false
     }
   },
-  "active": "51658ea5b2adea21",
+  "active": "3a864cddcb7df534",
   "lastOpenFiles": [
-    "Untitled.base",
-    "Tables/zTemplate.md",
-    "zTemplates",
-    "Welcome.md",
-    "Tables"
+    "Knowledge/Acquired/ServiceNow Developer Learn/CORS Rules ServiceNow Developer.md",
+    "Knowledge/Acquired/ServiceNow Developer Learn/Exercise Add a Header to Obtain Session Debug.md",
+    "Knowledge/User Guides/Slash Commands.md",
+    "Knowledge/User Guides/ServiceNow MCP Server.md",
+    "Knowledge/User Guides/Page Capture Tool.md",
+    "Knowledge/User Guides/Jira MCP Server.md",
+    "Knowledge/User Guides/How to test the Table API.md",
+    "First time setup.md",
+    "Design/Jira MCP Server.md",
+    "Ideas/Jira Integration.md",
+    "Design/Slash Commands.md",
+    "Ideas/Actual Easy Import.md",
+    "Ideas/ServiceNow Integration.md",
+    "Ideas/Knowledge Clipping.md",
+    "Ideas/Spotify Integration.md",
+    "Ideas/Obsidian Integration.md",
+    "Ideas/Github Repository.md",
+    "Design/ServiceNow MCP Server.md",
+    "Knowledge/Acquired/ServiceNow Developer Learn/Exercise Prepare and Send an API Request to the Table API.md",
+    "Design/Page Capture Tool.md"
   ]
 }

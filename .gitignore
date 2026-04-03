@@ -1,5 +1,6 @@
 .mcp.json
 CLAUDE.local.md
+.pii-patterns
 .claude/settings.local.json
 .secrets
 node_modules/

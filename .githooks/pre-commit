@@ -1,0 +1,43 @@
+#!/bin/bash
+# Pre-commit PII check
+# Scans staged content against patterns in .pii-patterns
+# To install: git config core.hooksPath .githooks
+
+PATTERNS_FILE=".pii-patterns"
+
+if [ ! -f "$PATTERNS_FILE" ]; then
+  exit 0
+fi
+
+STAGED_DIFF=$(git diff --cached -U0 | grep "^+" | grep -v "^+++")
+
+if [ -z "$STAGED_DIFF" ]; then
+  exit 0
+fi
+
+FOUND=0
+
+while IFS= read -r pattern; do
+  [[ -z "$pattern" || "$pattern" == \#* ]] && continue
+
+  MATCHES=$(echo "$STAGED_DIFF" | grep -E "$pattern")
+  if [ -n "$MATCHES" ]; then
+    if [ $FOUND -eq 0 ]; then
+      echo ""
+      echo "PII check failed — staged changes contain blocked patterns:"
+      echo ""
+    fi
+    echo "  Pattern: $pattern"
+    echo "$MATCHES" | head -5 | sed 's/^/    /'
+    echo ""
+    FOUND=1
+  fi
+done < "$PATTERNS_FILE"
+
+if [ $FOUND -ne 0 ]; then
+  echo "Review the matches above. If intentional, remove the pattern from .pii-patterns temporarily."
+  echo ""
+  exit 1
+fi
+
+exit 0

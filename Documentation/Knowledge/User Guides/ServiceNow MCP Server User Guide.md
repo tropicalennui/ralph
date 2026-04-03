@@ -1,8 +1,7 @@
 ---
 type: User Guide
 ---
-
-The ServiceNow MCP server gives Claude the ability to read and write records on the PDI during development, without needing to use the ServiceNow UI or write background scripts for simple queries.
+The [[ServiceNow MCP Server]] gives Claude the ability to read and write records on the PDI during development, without needing to use the ServiceNow UI or write background scripts for simple queries.
 
 ## Available Actions
 

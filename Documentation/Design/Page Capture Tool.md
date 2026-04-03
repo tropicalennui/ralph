@@ -1,5 +1,7 @@
-# Technical Design: Page Capture Tool
-
+---
+type: Technical Design
+user-guide: "[[Page Capture Tool User Guide]]"
+---
 Captures the content of the active browser tab and saves it as a markdown document in the Obsidian vault.
 
 ---

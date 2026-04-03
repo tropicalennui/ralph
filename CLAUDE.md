@@ -48,6 +48,18 @@ Every feature — new or existing — must have all three:
 
 When building or modifying a feature, create or update all three as part of the same piece of work. Do not consider a feature complete without them. `/promote` enforces this by running tests before merging.
 
+## First-Time Setup
+
+After cloning, run once:
+
+```bash
+git config core.hooksPath .githooks
+cp CLAUDE.local.md.example CLAUDE.local.md
+cp .pii-patterns.example .pii-patterns
+```
+
+Then fill in `CLAUDE.local.md` and `.pii-patterns` with your instance-specific values.
+
 ## Project Setup Tasks
 
 - [x] Configure Jira Cloud integration

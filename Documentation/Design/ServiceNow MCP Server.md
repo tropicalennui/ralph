@@ -1,5 +1,7 @@
-# ServiceNow MCP Server — Technical Design
-
+---
+type: Technical Design
+user-guide: "[[ServiceNow MCP Server User Guide]]"
+---
 ## Purpose
 
 Exposes the ServiceNow Table API as an MCP tool server so Claude can query and modify records on the PDI during development.

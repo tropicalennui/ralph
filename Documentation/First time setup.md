@@ -1,5 +1,5 @@
 ---
-Instance Name: https://devXXXXXX.service-now.com
+type: User Guide
 ---
 # Steps
 

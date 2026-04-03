@@ -2,41 +2,35 @@
 
 A personal development workspace connecting Claude to ServiceNow, Jira, Obsidian, and other tools. Features are tracked as ideas in `Documentation/Ideas/` and delivered as scoped applications, integrations, and tooling.
 
-## ServiceNow Instance
-
-- **Instance**: https://devXXXXXX.service-now.com/
-- **Type**: Personal Developer Instance (PDI)
-- **Region**: Australia
-
 ## Workspace Layout
 
 ```
 Ralph/
 ├── CLAUDE.md
-├── .mcp-jira/       # Custom Jira MCP server
-├── .mcp-snow/       # Custom ServiceNow MCP server
-├── .tools/          # Utility tools (page capture, etc.)
-└── Documentation/   # Obsidian documentation vault
+├── CLAUDE.local.md  # Local instance config (gitignored — see CLAUDE.local.md.example)
+├── mcp-jira/        # Custom Jira MCP server
+├── mcp-snow/        # Custom ServiceNow MCP server
+├── tools/           # Utility tools (page capture, etc.)
+└── Documentation/   # Obsidian vault root
 ```
 
 ### Obsidian Vault
 
-Used for project documentation. Plugins:
+The vault root is the `Documentation/` folder. Plugins:
 - **Templater** — installed
 - **Tasks** — intended, not yet installed
 
 ## Integrations
 
-- **Jira Cloud** — `tropicalennui.atlassian.net`, project key `AEI`. MCP via custom `mcp-jira` server (`.mcp-jira/index.js`). Falls back to REST API if MCP unavailable.
-- **ServiceNow REST API** — MCP via custom `mcp-snow` server (`.mcp-snow/index.js`). Basic auth with `svc.claude` service account. Credentials in `.mcp.json` (gitignored).
+- **Jira Cloud** — MCP via custom `mcp-jira` server (`mcp-jira/index.js`). Falls back to REST API if MCP unavailable. Instance details in `CLAUDE.local.md`.
+- **ServiceNow REST API** — MCP via custom `mcp-snow` server (`mcp-snow/index.js`). Basic auth with `svc.claude` service account. Credentials in `.mcp.json` (gitignored). Instance details in `CLAUDE.local.md`.
 
 ## Jira Conventions
 
 - When completing a Jira issue, always assign it to the user before or during resolution.
-- User's Jira account ID: `603c1d6dd4c62100717465df`
 - Before starting any feature work, check for an existing Epic or Feature in Jira and capture work under it. Create one if it doesn't exist.
-- Use the Jira REST API (`https://tropicalennui.atlassian.net/rest/api/3/`) when MCP tools are unavailable.
-- Credentials are in `.mcp.json` (gitignored).
+- Use the Jira REST API when MCP tools are unavailable.
+- Credentials are in `.mcp.json` (gitignored). Instance URL and account ID are in `CLAUDE.local.md`.
 
 ## Git Conventions
 

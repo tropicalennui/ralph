@@ -1,0 +1,12 @@
+## ServiceNow Instance
+
+- **Instance**: https://<your-instance>.service-now.com/
+- **Type**: Personal Developer Instance (PDI)
+- **Region**: <your-region>
+
+## Jira
+
+- **Site**: `<your-subdomain>.atlassian.net`
+- **Project key**: `<your-project-key>`
+- **REST API base**: `https://<your-subdomain>.atlassian.net/rest/api/3/`
+- **User account ID**: `<your-jira-account-id>`

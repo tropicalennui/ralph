@@ -1,4 +1,6 @@
-# Page Capture Tool — User Guide
+---
+type: User Guide
+---
 
 The page capture tool saves browser pages as Markdown files directly into the Obsidian vault. Useful for capturing ServiceNow developer documentation, course exercises, and reference material.
 

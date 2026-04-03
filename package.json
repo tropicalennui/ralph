@@ -1,0 +1,8 @@
+{
+  "name": "servicenow-claude-integration",
+  "version": "1.0.0",
+  "description": "ServiceNow–Claude Integration — root test runner",
+  "scripts": {
+    "test": "node --test tools/page-capture/server/test/**/*.test.js"
+  }
+}

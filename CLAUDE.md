@@ -13,9 +13,9 @@ A personal development workspace connecting Claude to ServiceNow, Jira, Obsidian
 ```
 Ralph/
 ├── CLAUDE.md
-├── mcp-jira/        # Custom Jira MCP server
-├── mcp-snow/        # Custom ServiceNow MCP server
-├── tools/           # Utility tools (page capture, etc.)
+├── .mcp-jira/       # Custom Jira MCP server
+├── .mcp-snow/       # Custom ServiceNow MCP server
+├── .tools/          # Utility tools (page capture, etc.)
 └── Documentation/   # Obsidian documentation vault
 ```
 
@@ -27,8 +27,8 @@ Used for project documentation. Plugins:
 
 ## Integrations
 
-- **Jira Cloud** — `tropicalennui.atlassian.net`, project key `AEI`. MCP via custom `mcp-jira` server (`mcp-jira/index.js`). Falls back to REST API if MCP unavailable.
-- **ServiceNow REST API** — MCP via custom `mcp-snow` server (`mcp-snow/index.js`). Basic auth with `svc.claude` service account. Credentials in `.mcp.json` (gitignored).
+- **Jira Cloud** — `tropicalennui.atlassian.net`, project key `AEI`. MCP via custom `mcp-jira` server (`.mcp-jira/index.js`). Falls back to REST API if MCP unavailable.
+- **ServiceNow REST API** — MCP via custom `mcp-snow` server (`.mcp-snow/index.js`). Basic auth with `svc.claude` service account. Credentials in `.mcp.json` (gitignored).
 
 ## Jira Conventions
 

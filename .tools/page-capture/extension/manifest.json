@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Vault Page Capture",
+  "version": "1.0",
+  "description": "Capture the current page as markdown to your Obsidian vault",
+  "permissions": ["activeTab", "scripting"],
+  "host_permissions": ["http://localhost:3737/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {},
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Q"
+      },
+      "description": "Capture current page to vault"
+    }
+  }
+}

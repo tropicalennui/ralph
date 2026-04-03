@@ -1,7 +1,8 @@
 .mcp.json
-CLAUDE.local.md
+.claude/CLAUDE.local.md
 .pii-patterns
 .claude/settings.local.json
 .secrets
 node_modules/
 Documentation/.obsidian/
+Documentation/Ideas/

@@ -6,12 +6,13 @@ A personal development workspace connecting Claude to ServiceNow, Jira, Obsidian
 
 ```
 Ralph/
-├── CLAUDE.md
-├── CLAUDE.local.md  # Local instance config (gitignored — see CLAUDE.local.md.example)
-├── mcp-jira/        # Custom Jira MCP server
-├── mcp-snow/        # Custom ServiceNow MCP server
-├── tools/           # Utility tools (page capture, etc.)
-└── Documentation/   # Obsidian vault root
+├── .claude/
+│   ├── CLAUDE.md         # Project instructions for Claude (checked in)
+│   └── CLAUDE.local.md   # Local instance config (gitignored — see CLAUDE.local.md.example)
+├── mcp-jira/             # Custom Jira MCP server
+├── mcp-snow/             # Custom ServiceNow MCP server
+├── tools/                # Utility tools (page capture, etc.)
+└── Documentation/        # Obsidian vault root
 ```
 
 ### Obsidian Vault
@@ -22,15 +23,15 @@ The vault root is the `Documentation/` folder. Plugins:
 
 ## Integrations
 
-- **Jira Cloud** — MCP via custom `mcp-jira` server (`mcp-jira/index.js`). Falls back to REST API if MCP unavailable. Instance details in `CLAUDE.local.md`.
-- **ServiceNow REST API** — MCP via custom `mcp-snow` server (`mcp-snow/index.js`). Basic auth with `svc.claude` service account. Credentials in `.mcp.json` (gitignored). Instance details in `CLAUDE.local.md`.
+- **Jira Cloud** — MCP via custom `mcp-jira` server (`mcp-jira/index.js`). Falls back to REST API if MCP unavailable. Instance details in `.claude/CLAUDE.local.md`.
+- **ServiceNow REST API** — MCP via custom `mcp-snow` server (`mcp-snow/index.js`). Basic auth with `svc.claude` service account. Credentials in `.secrets` (gitignored). Instance details in `.claude/CLAUDE.local.md`.
 
 ## Jira Conventions
 
 - When completing a Jira issue, always assign it to the user before or during resolution.
 - Before starting any feature work, check for an existing Epic or Feature in Jira and capture work under it. Create one if it doesn't exist.
 - Use the Jira REST API when MCP tools are unavailable.
-- Credentials are in `.mcp.json` (gitignored). Instance URL and account ID are in `CLAUDE.local.md`.
+- Credentials are in `.secrets` (gitignored). Instance URL and account ID are in `.claude/CLAUDE.local.md`.
 
 ## Git Conventions
 
@@ -54,11 +55,11 @@ After cloning, run once:
 
 ```bash
 git config core.hooksPath .githooks
-cp CLAUDE.local.md.example CLAUDE.local.md
+cp .claude/CLAUDE.local.md.example .claude/CLAUDE.local.md
 cp .pii-patterns.example .pii-patterns
 ```
 
-Then fill in `CLAUDE.local.md` and `.pii-patterns` with your instance-specific values.
+Then fill in `.claude/CLAUDE.local.md` and `.pii-patterns` with your instance-specific values.
 
 ## Project Setup Tasks
 

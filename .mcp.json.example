@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "jira": {
+      "command": "node",
+      "args": ["mcp-jira/start.js"]
+    },
+    "snow": {
+      "command": "node",
+      "args": ["mcp-snow/start.js"]
+    }
+  }
+}

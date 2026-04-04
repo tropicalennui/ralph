@@ -1,5 +1,6 @@
 ---
 type: User Guide
+parent: "[[Ralph User Guide]]"
 ---
 The Jira MCP server gives Claude the ability to manage issues in the **ServiceNow-Claude Integration** Jira project (key: `AEI`) directly from the editor.
 

@@ -11,7 +11,7 @@ Ralph/
 │   └── CLAUDE.local.md   # Local instance config (gitignored — see CLAUDE.local.md.example)
 ├── mcp-jira/             # Custom Jira MCP server
 ├── mcp-snow/             # Custom ServiceNow MCP server
-├── tools/                # Utility tools (page capture, etc.)
+├── tools/                # Utility tools (Yoink, etc.)
 └── Documentation/        # Obsidian vault root
 ```
 
@@ -43,8 +43,8 @@ The vault root is the `Documentation/` folder. Plugins:
 ## Documentation Conventions
 
 Every feature — new or existing — must have all three:
-- A **technical design document** in `Documentation/Design/`
-- A **user guide** in `Documentation/Knowledge/User Guides/`
+- A **technical design document** in `Documentation/Features/`
+- A **user guide** in `Documentation/Knowledge/`
 - **Tests** covered by `npm test` at the project root
 
 When building or modifying a feature, create or update all three as part of the same piece of work. Do not consider a feature complete without them. `/promote` enforces this by running tests before merging.
@@ -65,5 +65,5 @@ Then fill in `.claude/CLAUDE.local.md` and `.pii-patterns` with your instance-sp
 
 - [x] Configure Jira Cloud integration
 - [x] Configure ServiceNow API integration
-- [ ] Define documentation structure and Obsidian templates
+- [x] Define documentation structure and Obsidian templates
 

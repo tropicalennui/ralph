@@ -85,11 +85,11 @@ Ralph/
 │   └── CLAUDE.local.md             # Your instance config (gitignored)
 ├── mcp-jira/                       # Custom Jira MCP server
 ├── mcp-snow/                       # Custom ServiceNow MCP server
-├── tools/                          # Utility tools (page capture, etc.)
+├── tools/                          # Utility tools (Yoink, etc.)
 └── Documentation/                  # Obsidian vault root
-    ├── Design/                     # Technical design documents
+    ├── Features/                   # Technical design documents
     ├── Ideas/                      # Feature ideas and backlog
-    └── Knowledge/User Guides/      # User guides for each feature
+    └── Knowledge/                  # User guides and clipped content
 ```
 
 ## Gitignored files

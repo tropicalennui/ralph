@@ -12,20 +12,20 @@ Custom slash commands that extend Claude Code with workspace-specific workflows.
 
 ## Commands
 
-### `/catch`
+### `/yoink`
 
-**File:** `.claude/commands/catch.md`
+**File:** `.claude/commands/yoink.md`
 
-Manages the page capture server (`tools/page-capture/server/server.js`).
+Manages the Yoink server (`tools/yoink/server/server.js`).
 
 | Argument | Action |
 |---|---|
-| `start` | Starts the server in the background, writes PID to `/tmp/catch-server.pid`, logs to `/tmp/catch-server.log` |
+| `start` | Starts the server in the background, writes PID to `/tmp/yoink-server.pid`, logs to `/tmp/yoink-server.log` |
 | `stop` | Kills the process via saved PID, falls back to killing by port 3737 if no PID file exists |
 
-The server listens on `http://127.0.0.1:3737`. The command is a convenience wrapper — the server can also be started manually via `cd tools/page-capture/server && node server.js`.
+The server listens on `http://127.0.0.1:3737`. The command is a convenience wrapper — the server can also be started manually via `cd tools/yoink/server && node server.js`.
 
-**Note:** `/catch` does not work in the VS Code extension context (no background process support). Use the terminal directly there.
+**Note:** `/yoink` does not work in the VS Code extension context (no background process support). Use the terminal directly there.
 
 ### `/promote`
 
@@ -62,4 +62,4 @@ Steps executed in order:
 1. Create `.claude/commands/<name>.md`
 2. Write the command prompt — Claude receives the file content as its instructions
 3. Use `$ARGUMENTS` to accept user-supplied arguments
-4. Add the command to the user guide at `Documentation/Knowledge/User Guides/Slash Commands.md`
+4. Add the command to the user guide at `Documentation/Knowledge/Slash Command User Guide.md`

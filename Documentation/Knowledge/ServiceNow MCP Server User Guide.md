@@ -1,5 +1,6 @@
 ---
 type: User Guide
+parent: "[[Ralph User Guide]]"
 ---
 The [[ServiceNow MCP Server]] gives Claude the ability to read and write records on the PDI during development, without needing to use the ServiceNow UI or write background scripts for simple queries.
 

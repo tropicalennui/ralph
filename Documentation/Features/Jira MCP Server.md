@@ -30,7 +30,7 @@ Basic auth via Jira API token. Credentials passed as environment variables in `.
 
 | Variable | Description |
 |---|---|
-| `JIRA_SITE` | Atlassian subdomain (e.g. `tropicalennui`) |
+| `JIRA_SITE` | Atlassian subdomain (e.g. `yourname`) |
 | `JIRA_EMAIL` | Account email |
 | `JIRA_TOKEN` | API token |
 

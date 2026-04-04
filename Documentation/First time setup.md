@@ -1,9 +1,10 @@
 ---
 type: User Guide
+technical_design: "[[Ralph]]"
 ---
 # Steps
 
-1. Log on as system administrator, elevate to security admin, and create user accounts by running [create_users.js](create_users.js) as a background script (**System Definition > Scripts - Background**)
+1. Log on as system administrator, elevate to security admin, and create user accounts by running `Knowledge\Resources\create_users.js` as a background script (**System Definition > Scripts - Background**)
 2. Navigate to `sys_user.list` and set passwords for `svc.claude` and `rosemary`
 3. Update `.secrets` with the instance hostname, `svc.claude` username and password
 4. Update `SNOW_INSTANCE` in `.mcp.json` to the new hostname

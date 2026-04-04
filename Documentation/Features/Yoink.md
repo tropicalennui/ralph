@@ -1,6 +1,6 @@
 ---
 type: Technical Design
-user-guide: "[[Page Capture Tool User Guide]]"
+user-guide: "[[Yoink User Guide]]"
 ---
 Captures the content of the active browser tab and saves it as a markdown document in the Obsidian vault.
 
@@ -38,7 +38,7 @@ ServiceNow knowledge content is needed for offline reference and project documen
 
 ### 1. Browser Extension
 
-**Location:** `tools/page-capture/extension/`
+**Location:** `tools/yoink/extension/`
 
 | File | Purpose |
 |---|---|
@@ -80,7 +80,7 @@ A persistent content script would run on every page load. `executeScript` is on-
 
 ### 2. Local Server
 
-**Location:** `tools/page-capture/server/`
+**Location:** `tools/yoink/server/`
 
 | File | Purpose |
 |---|---|
@@ -169,10 +169,10 @@ captured: 2026-04-03
 
 ## Lifecycle Management
 
-The server is managed via the `/catch` slash command in Claude Code:
+The server is managed via the `/yoink` slash command in Claude Code:
 
-- `/catch start` — spawns `node server.js` as a background process, saves PID to `/tmp/catch-server.pid`
-- `/catch stop` — kills the process by PID, with a port-based fallback
+- `/yoink start` — spawns `node server.js` as a background process, saves PID to `/tmp/yoink-server.pid`
+- `/yoink stop` — kills the process by PID, with a port-based fallback
 
 The extension is loaded as an unpacked extension in Edge developer mode and persists across browser restarts without reinstallation.
 
@@ -184,6 +184,6 @@ The extension is loaded as an unpacked extension in Edge developer mode and pers
 |---|---|
 | Server must be running | The extension will silently fail (red toast) if the server isn't started first |
 | HTTP only on localhost | Server binds to `127.0.0.1` only — not exposed on the network |
-| Single output folder | All captures go to `Documentation/Knowledge/` — no subfolder selection at capture time |
+| Single output folder | All captures go to `Documentation/Knowledge/Yoinked/` — no subfolder selection at capture time |
 | Filename collisions | If a file with the same title already exists, it is overwritten without warning |
 | Readability may fail | Some pages (e.g. SPAs that render content after load) may not parse cleanly; the raw body HTML is used as a fallback |

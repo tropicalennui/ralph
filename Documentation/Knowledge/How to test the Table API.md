@@ -1,5 +1,6 @@
 ---
 type: User Guide
+parent: "[[User Guides]]"
 ---
 1. Open **System Web Services > REST > REST API Explorer**
 2. Configure a GET request: method = **Retrieve records from a table (GET)**, tableName = **incident**

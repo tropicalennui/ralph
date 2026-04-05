@@ -10,7 +10,7 @@ Run `git branch --show-current`. If the result is `main` or `master`, stop immed
 
 Run `git status --short`. If there are changes:
 
-1. Run `git diff` and `git diff --cached` to understand what's changed.
+1. Run `git diff --stat` and `git diff --cached --stat` to understand what's changed.
 2. Draft a concise commit message summarising the changes.
 3. Tell the user the proposed commit message and the list of changed files, and ask them to confirm before proceeding.
 4. Once confirmed, stage all changes with `git add -A` and commit using the agreed message, co-authored by Claude:
@@ -26,8 +26,20 @@ EOF
 
 ## Step 3 — Run the test suite
 
-Run `npm test` from the project root. If any tests fail:
-- Show the user which tests failed and why.
+Run the test suite and capture output:
+
+```bash
+TEST_OUTPUT=$(npm test 2>&1)
+TEST_EXIT=$?
+if [ $TEST_EXIT -ne 0 ]; then
+  echo "$TEST_OUTPUT"
+else
+  echo "$TEST_OUTPUT" | grep -E "^# (tests|suites|pass|fail|cancelled|skipped)"
+fi
+```
+
+If the exit code is non-zero:
+- The full output has already been shown above.
 - Stop. Do not merge. Tell the user: "Tests failed — fix the failures before promoting."
 
 ## Step 4 — Merge to main

@@ -7,8 +7,9 @@ A personal development workspace connecting Claude to ServiceNow, Jira, Obsidian
 ```
 Ralph/
 ├── .claude/
-│   ├── CLAUDE.md         # Project instructions for Claude (checked in)
-│   └── CLAUDE.local.md   # Local instance config (gitignored — see CLAUDE.local.md.example)
+│   ├── CLAUDE.md              # Project instructions for Claude (checked in)
+│   ├── CLAUDE.conventions.md  # Workspace conventions — run /setup-memory on first use
+│   └── CLAUDE.local.md        # Local instance config (gitignored — see CLAUDE.local.md.example)
 ├── mcp-jira/             # Custom Jira MCP server
 ├── mcp-snow/             # Custom ServiceNow MCP server
 ├── tools/                # Utility tools (Yoink, etc.)
@@ -26,29 +27,6 @@ The vault root is the `Documentation/` folder. Plugins:
 - **Jira Cloud** — MCP via custom `mcp-jira` server (`mcp-jira/index.js`). Falls back to REST API if MCP unavailable. Instance details in `.claude/CLAUDE.local.md`.
 - **ServiceNow REST API** — MCP via custom `mcp-snow` server (`mcp-snow/index.js`). Basic auth with `svc.claude` service account. Credentials in `.secrets` (gitignored). Instance details in `.claude/CLAUDE.local.md`.
 
-## Jira Conventions
-
-- When completing a Jira issue, always assign it to the user before or during resolution.
-- Before starting any feature work, check for an existing Epic or Feature in Jira and capture work under it. Create one if it doesn't exist.
-- Use the Jira REST API when MCP tools are unavailable.
-- Credentials are in `.secrets` (gitignored). Instance URL and account ID are in `.claude/CLAUDE.local.md`.
-
-## Git Conventions
-
-- Always check the current branch before starting feature work (`git branch`).
-- If on `master`, create a new branch: `git checkout -b feature/<short-description>`.
-- If already on a feature branch, ask the user whether to continue in that branch or create a new one.
-- Never commit directly to `master`.
-
-## Documentation Conventions
-
-Every feature — new or existing — must have all three:
-- A **technical design document** in `Documentation/Features/`
-- A **user guide** in `Documentation/Knowledge/`
-- **Tests** covered by `npm test` at the project root
-
-When building or modifying a feature, create or update all three as part of the same piece of work. Do not consider a feature complete without them. `/promote` enforces this by running tests before merging.
-
 ## First-Time Setup
 
 After cloning, run once:
@@ -59,11 +37,10 @@ cp .claude/CLAUDE.local.md.example .claude/CLAUDE.local.md
 cp .pii-patterns.example .pii-patterns
 ```
 
-Then fill in `.claude/CLAUDE.local.md` and `.pii-patterns` with your instance-specific values.
+Then fill in `.claude/CLAUDE.local.md` and `.pii-patterns` with your instance-specific values. Then run `/setup-memory` in Claude Code to load workspace conventions into local memory.
 
 ## Project Setup Tasks
 
 - [x] Configure Jira Cloud integration
 - [x] Configure ServiceNow API integration
 - [x] Define documentation structure and Obsidian templates
-

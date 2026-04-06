@@ -1,0 +1,32 @@
+# snowdb.config.yaml
+# Defines which ServiceNow tables snowsync mirrors into snow.db.
+#
+# Each entry can optionally specify:
+#   query  — encoded SNOW query string (e.g. "active=true")
+#   fields — list of field names to sync (default: all fields)
+#
+# sys_id and sys_updated_on are always included regardless of the fields list.
+# Reference fields are stored as two columns: fieldname (sys_id value) and
+# fieldname_dv (display value).
+
+tables:
+  - name: sys_script_include
+
+  - name: sys_ui_action
+    query: "active=true"
+
+  - name: sys_dictionary
+    query: "internal_type.labelLIKEScript"
+
+  # Example with explicit field list:
+  # - name: incident
+  #   query: "active=true^stateIN1,2"
+  #   fields:
+  #     - number
+  #     - short_description
+  #     - state
+  #     - priority
+  #     - assigned_to
+  #     - caller_id
+  #     - opened_at
+  #     - resolved_at

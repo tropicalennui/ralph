@@ -10,4 +10,10 @@ For each of the following convention groups, create or update the corresponding 
 
 4. **Idea naming conventions** — save as a `feedback` type memory covering: top-level ideas named `Epic, {{title}}`; child ideas named `Epic, {{ParentEpicTitle}}, {{title}}`.
 
-After saving all four, confirm to the user that memory has been seeded and they won't need to run this again unless they reset their memory.
+5. **ServiceNow background script style** — save as a `feedback` type memory: do not wrap background scripts in a function or IIFE; write at the top level directly.
+
+6. **ServiceNow data model conventions** — save as a `feedback` type memory: role assignments are in `sys_user_has_role`, not `sys_user.roles`; `svc.claude` has admin + snc_readonly and is effectively read-only; do not attempt writes until the user explicitly grants scoped write access.
+
+7. **Database design process** — save as a `feedback` type memory: always plan and present schema (tables, columns, rationale) and get explicit user sign-off before writing any code or creating any database files.
+
+After saving all seven, confirm to the user that memory has been seeded and they won't need to run this again unless they reset their memory.

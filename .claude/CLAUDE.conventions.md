@@ -30,3 +30,19 @@ When building or modifying a feature, create or update all three as part of the 
 
 - Top-level ideas: `Epic, {{title}}`
 - Child ideas: `Epic, {{ParentEpicTitle}}, {{title}}` (not "Epic, Feature, ...")
+
+## ServiceNow Conventions
+
+### Background Scripts
+- Do not wrap ServiceNow background scripts in an IIFE or any function wrapper.
+- Write code at the top level directly — background scripts run in a top-level execution context.
+
+### Data Model
+- User role assignments live in `sys_user_has_role` (not `sys_user.roles`). Query `sys_user_has_role` filtered by `user=<sys_id>` to check what roles a user has.
+- The `svc.claude` service account has `admin` + `snc_readonly`. `snc_readonly` constrains it to read-only — treat as read-only for all practical purposes.
+- Write access will be granted deliberately and scoped to specific tables only. Do not attempt write operations via svc.claude until the user explicitly grants it.
+
+## Database Design
+
+- Never build a database, table, or significant schema change without first presenting the proposed design and getting explicit sign-off from the user.
+- Present each table and column, explain the rationale, and wait for approval before writing any code or creating files.

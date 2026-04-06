@@ -15,7 +15,7 @@ Documentation/
 ├── Features/         # Technical design documents
 ├── Ideas/            # Personal feature backlog (gitignored)
 ├── Knowledge/
-│   ├── Yoinked/      # Clipped external content (Yoink)
+│   ├── Yoinked/      # Clipped external content
 │   └── [User Guides] # User guides live flat in Knowledge/
 ├── User Guides.md    # Dataview index of all user guides
 └── zTemplates/       # Templater templates

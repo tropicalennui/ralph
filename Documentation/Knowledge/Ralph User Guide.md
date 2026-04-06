@@ -17,7 +17,6 @@ Open the project in VS Code with the Claude Code extension active. Claude automa
 From there you can:
 - Ask Claude to look up or create Jira issues — the Jira MCP server handles this
 - Ask Claude to query ServiceNow tables — the ServiceNow MCP server handles this
-- Run `npm run yoink:start` in the terminal to start the Yoink server and clip web pages into the vault
 - Run `/promote` to merge a feature branch into master after tests pass
 - Run `/publish` to push master to GitHub
 

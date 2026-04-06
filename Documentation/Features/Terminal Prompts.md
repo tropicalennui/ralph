@@ -34,19 +34,9 @@ See [[Igloo User Guide]] for full usage.
 
 ---
 
-### Yoink server
-
-The local HTTP server that receives page captures from the browser extension and saves them as Markdown to the vault.
-
-**Location:** `tools/yoink/server/server.js`
-
-Managed via npm scripts at the repo root — no Claude required.
-
----
-
 ## Testing
 
-This is an umbrella document — testing is covered per tool. See [[Yoink]], [[Fetch]], and [[Igloo]] for their respective testing sections.
+This is an umbrella document — testing is covered per tool. See [[Fetch]] and [[Igloo]] for their respective testing sections.
 
 ## What belongs here vs slash commands
 
@@ -57,4 +47,4 @@ This is an umbrella document — testing is covered per tool. See [[Yoink]], [[F
 | Pure shell / Node execution | ✓ | |
 | Multi-step workflow with confirmation gates | | ✓ |
 
-Examples: `fetch`, `snowsync`, `npm run yoink:start` → Terminal Prompts. `/promote`, `/publish`, `/setup-memory` → Slash Commands.
+Examples: `fetch`, `snowsync` → Terminal Prompts. `/promote`, `/publish`, `/setup-memory` → Slash Commands.

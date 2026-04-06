@@ -22,9 +22,6 @@ Talk to your Jira backlog directly from VS Code. Create issues, check status, an
 ### ServiceNow integration
 Query your ServiceNow PDI from the Claude chat — look up records, explore tables, and pull data without navigating the browser UI.
 
-### Yoink
-Press a keyboard shortcut in Edge and the current page is instantly captured as a clean Markdown document in your Obsidian vault. No copy-pasting, no formatting — just saved.
-
 ### Igloo
 Mirror ServiceNow tables into a local database. Once synced, you can query your SNOW data instantly from the terminal — no network, no rate limits, no waiting.
 
@@ -127,7 +124,7 @@ Ralph/
 │   └── CLAUDE.local.md             # Your instance config (gitignored)
 ├── mcp-jira/                       # Custom Jira MCP server
 ├── mcp-snow/                       # Custom ServiceNow MCP server
-├── tools/                          # Utility tools (Yoink, Fetch, Igloo, etc.)
+├── tools/                          # Utility tools (Fetch, Igloo, Snowsync, etc.)
 └── Documentation/                  # Obsidian vault root
     ├── Features/                   # Technical design documents
     ├── Ideas/                      # Feature ideas and backlog

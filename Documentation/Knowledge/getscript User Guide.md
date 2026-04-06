@@ -1,8 +1,7 @@
 ---
 type: User Guide
-parent: "[[Ralph User Guide]]"
+parent: "[[Terminal Prompts User Guide]]"
 ---
-
 `getscript` pulls a script from any ServiceNow table and saves it as a `.js` file in the `WIP/` folder at the repo root. Run it from the VSCode terminal.
 
 ## Basic usage

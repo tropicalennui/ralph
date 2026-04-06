@@ -1,8 +1,8 @@
 ---
 type: User Guide
-feature: "[[snowsync]]"
+feature: "[[Igloo]]"
 ---
-snowsync mirrors ServiceNow tables into a local DuckDB database (`snow.db`). Once synced, you can query SNOW data instantly from the terminal — no network required.
+Igloo mirrors ServiceNow tables into a local DuckDB database (`snow.db`). Once synced, you can query SNOW data instantly from the terminal — no network required.
 
 ---
 
@@ -97,7 +97,7 @@ Fields that reference another SNOW record (e.g. `assigned_to`, `caller_id`) are 
 
 ## Deleted records
 
-snowsync never physically deletes rows. If a record is no longer returned by SNOW (because it was deleted or filtered out by your `query`), it is soft-deleted:
+Igloo never physically deletes rows. If a record is no longer returned by SNOW (because it was deleted or filtered out by your `query`), it is soft-deleted:
 
 ```sql
 _deleted    = TRUE

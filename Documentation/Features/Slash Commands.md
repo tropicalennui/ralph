@@ -12,21 +12,6 @@ Custom slash commands that extend Claude Code with workspace-specific workflows.
 
 ## Commands
 
-### `/yoink`
-
-**File:** `.claude/commands/yoink.md`
-
-Manages the Yoink server (`tools/yoink/server/server.js`).
-
-| Argument | Action |
-|---|---|
-| `start` | Starts the server in the background, writes PID to `/tmp/yoink-server.pid`, logs to `/tmp/yoink-server.log` |
-| `stop` | Kills the process via saved PID, falls back to killing by port 3737 if no PID file exists |
-
-The server listens on `http://127.0.0.1:3737`. The command is a convenience wrapper — the server can also be started manually via `cd tools/yoink/server && node server.js`.
-
-**Note:** `/yoink` does not work in the VS Code extension context (no background process support). Use the terminal directly there.
-
 ### `/promote`
 
 **File:** `.claude/commands/promote.md`

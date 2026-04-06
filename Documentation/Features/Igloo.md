@@ -1,6 +1,6 @@
 ---
 type: Technical Design
-user-guide: "[[snowsync User Guide]]"
+user-guide: "[[Igloo User Guide]]"
 ---
 Mirrors ServiceNow tables into a local DuckDB database (`snow.db`), enabling fast offline queries and local analysis of SNOW data.
 
@@ -8,7 +8,7 @@ Mirrors ServiceNow tables into a local DuckDB database (`snow.db`), enabling fas
 
 ## Problem Statement
 
-Querying ServiceNow via the REST API is slow, requires a network connection, and is subject to rate limits. Many use cases (reporting, cross-table joins, local analysis) would benefit from having SNOW data available locally. snowsync addresses this by maintaining a local mirror that is incrementally updated — inserting new records, updating changed ones, skipping unchanged ones, and soft-deleting records that no longer exist in SNOW.
+Querying ServiceNow via the REST API is slow, requires a network connection, and is subject to rate limits. Many use cases (reporting, cross-table joins, local analysis) would benefit from having SNOW data available locally. Igloo addresses this by maintaining a local mirror that is incrementally updated — inserting new records, updating changed ones, skipping unchanged ones, and soft-deleting records that no longer exist in SNOW.
 
 ---
 
@@ -189,7 +189,7 @@ No other runtime dependencies.
 
 | Constraint | Detail |
 |---|---|
-| No push/write-back | snowsync is read-only. It never writes to SNOW. |
+| No push/write-back | Igloo is read-only. It never writes to SNOW. |
 | Soft-delete only | Records removed from SNOW are flagged `_deleted = TRUE`, never physically deleted. |
 | sys_updated_on granularity | Change detection relies on `sys_updated_on`. Records with the same timestamp are treated as unchanged even if content differs. |
 | Large tables | Tables with tens of thousands of records will be slow on first sync. Subsequent runs are fast (only changed records are updated). |

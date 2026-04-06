@@ -178,6 +178,19 @@ The extension is loaded as an unpacked extension in Edge developer mode and pers
 
 ---
 
+## Testing
+
+**Location:** `tools/yoink/server/test/lib.test.js`  
+**Run:** `npm test` from the repo root
+
+Tests cover the pure functions in `lib.js` only. Server startup and HTTP behaviour are not tested — those require a running process.
+
+| Suite | What's covered |
+|---|---|
+| `sanitiseFilename` | Strips illegal filename characters; collapses multiple spaces; truncates to 100 chars; returns `capture-<timestamp>` fallback for empty or all-illegal input |
+| `cleanFragment` | Removes `data:` URI images; resolves relative image URLs to absolute; uses provided title when present; falls back to `<h1>` text; falls back to `Untitled` |
+| `buildFrontmatter` | Produces valid YAML frontmatter block with correct fields; escapes double quotes in title |
+
 ## Limitations & Known Constraints
 
 | Constraint | Detail |

@@ -55,3 +55,15 @@ Descriptions use Atlassian Document Format (ADF) for rich text fields.
 ## Error Handling
 
 All errors are caught and returned as `{ isError: true, content: [{ type: "text", text: "Error: ..." }] }` so the MCP host surfaces them cleanly rather than crashing.
+
+## Testing
+
+**Location:** `mcp-jira/test/lib.test.js`  
+**Run:** `npm test` from the repo root
+
+Tests use Node.js built-in `node:test` with a mock `jiraFn` — no network calls, no credentials required.
+
+| Suite | What's covered |
+|---|---|
+| `TOOLS` | Correct number of tools exposed; all expected tool names present; each tool has `name`, `description`, and `inputSchema`; each tool declares at least one required field |
+| `createHandler` | Unknown tool returns `isError`; network error from `jiraFn` is caught and surfaced; `jira_transition_issue` returns error when named status not found; `jira_transition_issue` succeeds with case-insensitive status match |

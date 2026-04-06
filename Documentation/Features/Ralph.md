@@ -35,6 +35,10 @@ Ralph/
 | Documentation | Obsidian vault | [[Obsidian Integration]] |
 | GitHub | `/publish` command | [[Github Repository]] |
 
+## Testing
+
+No automated tests at this level. Ralph is a workspace configuration — testing is per feature. Run `npm test` from the repo root to execute all automated tests across `mcp-jira`, `mcp-snow`, and `tools/yoink/server`.
+
 ## Conventions
 
 - All features start as an Idea in `Documentation/Ideas/`

@@ -44,6 +44,10 @@ Managed via npm scripts at the repo root — no Claude required.
 
 ---
 
+## Testing
+
+This is an umbrella document — testing is covered per tool. See [[Yoink]], [[Fetch]], and [[Igloo]] for their respective testing sections.
+
 ## What belongs here vs slash commands
 
 | Criterion | Terminal Prompt | Slash Command |

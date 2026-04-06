@@ -185,6 +185,21 @@ No other runtime dependencies.
 
 ---
 
+## Testing
+
+**Location:** `tools/snowsync/test/lib.test.js`  
+**Run:** `npm test` from the repo root
+
+Pure functions are extracted into `tools/snowsync/lib.js` and tested without DuckDB or network dependencies.
+
+| Suite | What's covered |
+|---|---|
+| `mapSnowType` | All SNOW internal types mapped to correct DuckDB types; unknown types fall back to VARCHAR; `sys_updated_on` forced to VARCHAR regardless of type |
+| `val` | Extracts `.value` from `{value, display_value}` objects; returns null for empty string; passes scalars through; returns null for null |
+| `dv` | Extracts `.display_value` from objects; falls back to `.value` when absent; passes scalars through; returns null for null |
+| `classifyRecord` | Returns `insert` when no prior row; returns `skip` when `sys_updated_on` matches and not deleted; returns `update` when timestamp differs; returns `update` when soft-deleted (un-deletion) |
+| `buildValues` | Extracts `val()` for regular columns; extracts `dv()` for `_dv` columns; handles mixed column lists; returns null for missing fields |
+
 ## Limitations
 
 | Constraint | Detail |

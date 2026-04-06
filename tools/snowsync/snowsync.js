@@ -282,7 +282,7 @@ async function main() {
   const secrets  = loadSecrets();
   const snowBase = `https://${secrets.SNOW_INSTANCE}`;
   const auth     = "Basic " + Buffer.from(`${secrets.SNOW_USER}:${secrets.SNOW_PASS}`).toString("base64");
-  const instance = secrets.SNOW_INSTANCE.split(".")[0]; // e.g. "dev200264"
+  const instance = secrets.SNOW_INSTANCE.split(".")[0]; // e.g. "dev123456"
 
   // Open snow.db
   const conn = await open();

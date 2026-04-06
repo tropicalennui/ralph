@@ -14,13 +14,13 @@ Not everything needs to go through Claude. Tools that follow a fixed procedure �
 
 ## Tools
 
-### getscript
+### Fetch
 
 Fetches a named script from a ServiceNow table and writes it to `WIP/` as a `.js` file. Uses a local DuckDB cache (`ralph.db`) to avoid re-fetching unchanged scripts.
 
-**Location:** `tools/getscript/getscript.js`
+**Location:** `tools/fetch/fetch.js`
 
-See [[getscript User Guide]] for full usage.
+See [[Fetch User Guide]] for full usage.
 
 ---
 
@@ -53,4 +53,4 @@ Managed via npm scripts at the repo root — no Claude required.
 | Pure shell / Node execution | ✓ | |
 | Multi-step workflow with confirmation gates | | ✓ |
 
-Examples: `getscript`, `snowsync`, `npm run yoink:start` → Terminal Prompts. `/promote`, `/publish`, `/setup-memory` → Slash Commands.
+Examples: `fetch`, `snowsync`, `npm run yoink:start` → Terminal Prompts. `/promote`, `/publish`, `/setup-memory` → Slash Commands.

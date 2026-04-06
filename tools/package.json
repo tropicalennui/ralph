@@ -4,7 +4,7 @@
   "description": "Shared tooling for Ralph workspace",
   "type": "commonjs",
   "scripts": {
-    "getscript": "node getscript/getscript.js"
+    "fetch": "node fetch/fetch.js"
   },
   "dependencies": {
     "@duckdb/node-api": "^1.5.1-r.1",

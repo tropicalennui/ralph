@@ -2,25 +2,27 @@
 type: User Guide
 parent: "[[Terminal Prompts User Guide]]"
 ---
-`getscript` pulls a script from any ServiceNow table and saves it as a `.js` file in the `WIP/` folder at the repo root. Run it from the VSCode terminal.
+`fetch` pulls a script from any ServiceNow table and saves it as a `.js` file in the `WIP/` folder at the repo root. Run it from the VSCode terminal.
+
+Useful for when you prefer working on scripts in VS Code, rather than in a web browser.
 
 ## Basic usage
 
 ```bash
-node tools/getscript/getscript.js <table> <name>
+node tools/fetch/fetch.js <table> <name>
 ```
 
 **Examples:**
 
 ```bash
 # Fetch a Script Include
-node tools/getscript/getscript.js sys_script_include "GlideViewManager"
+node tools/fetch/fetch.js sys_script_include "GlideViewManager"
 
 # Fetch a Business Rule
-node tools/getscript/getscript.js sys_script "My Business Rule"
+node tools/fetch/fetch.js sys_script "My Business Rule"
 
 # Fetch a UI Action
-node tools/getscript/getscript.js sys_ui_action "My UI Action"
+node tools/fetch/fetch.js sys_ui_action "My UI Action"
 ```
 
 Output is saved to `WIP/<table>_<name>.js`. The `WIP/` folder is gitignored.
@@ -37,7 +39,7 @@ Output is saved to `WIP/<table>_<name>.js`. The `WIP/` folder is gitignored.
 Some tables have more than one script field (e.g. `sys_ui_action` has `script` and `client_script_v2`). If you don't specify `--field`, the tool defaults to the field named `script`. If there is no field named `script`, it will tell you the options:
 
 ```bash
-node tools/getscript/getscript.js sys_ui_action "My Action" --field client_script_v2
+node tools/fetch/fetch.js sys_ui_action "My Action" --field client_script_v2
 ```
 
 ## Caching

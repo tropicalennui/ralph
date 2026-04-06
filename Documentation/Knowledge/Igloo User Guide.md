@@ -113,4 +113,4 @@ duckdb snow.db "SELECT * FROM sys_script_include WHERE _deleted = false"
 
 ## Multi-instance support
 
-The `instance` column stores the hostname prefix (e.g. `dev200264`) derived from the `SNOW_INSTANCE` value in `.secrets`. If you point `.secrets` at a different instance and re-sync, data from both instances coexists in the same `snow.db` table, distinguished by `instance`.
+The `instance` column stores the hostname prefix (e.g. `dev123456`) derived from the `SNOW_INSTANCE` value in `.secrets`. If you point `.secrets` at a different instance and re-sync, data from both instances coexists in the same `snow.db` table, distinguished by `instance`.

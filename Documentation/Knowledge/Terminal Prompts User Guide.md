@@ -22,22 +22,22 @@ The server listens on `http://127.0.0.1:3737`. Keep this terminal open while cap
 
 ---
 
-## getscript
+## Fetch
 
 Fetch a script from ServiceNow and save it to `WIP/`.
 
 ```bash
-node tools/getscript/getscript.js <table> <name>
+node tools/fetch/fetch.js <table> <name>
 ```
 
 ```bash
 # Examples
-node tools/getscript/getscript.js sys_script_include "GlideViewManager"
-node tools/getscript/getscript.js sys_ui_action "My UI Action" --field client_script_v2
-node tools/getscript/getscript.js sys_script_include "GlideViewManager" --fresh
+node tools/fetch/fetch.js sys_script_include "GlideViewManager"
+node tools/fetch/fetch.js sys_ui_action "My UI Action" --field client_script_v2
+node tools/fetch/fetch.js sys_script_include "GlideViewManager" --fresh
 ```
 
-Output is saved to `WIP/<table>_<name>.js`. See [[getscript User Guide]] for flags and caching details.
+Output is saved to `WIP/<table>_<name>.js`. See [[Fetch User Guide]] for flags and caching details.
 
 ---
 

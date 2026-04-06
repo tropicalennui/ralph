@@ -1,6 +1,6 @@
 ---
 type: Technical Design
-user-guide: "[[getscript User Guide]]"
+user-guide: "[[Fetch User Guide]]"
 ---
 Fetches a script field from any ServiceNow table and saves it as a `.js` file in the local `WIP/` folder.
 
@@ -16,9 +16,9 @@ ServiceNow scripts (business rules, script includes, UI actions, etc.) are edite
 
 ```
 [VSCode Terminal]
-    │  node tools/getscript/getscript.js <table> <name>
+    │  node tools/fetch/fetch.js <table> <name>
     ▼
-[getscript.js]
+[fetch.js]
     │  Look up script field name → ralph.db (script_fields)
     │  Check for cached content  → ralph.db (script_cache)
     │  If not cached: GET /api/now/table/<table>?sysparm_query=name=<name>
@@ -26,7 +26,7 @@ ServiceNow scripts (business rules, script includes, UI actions, etc.) are edite
 [ServiceNow Table REST API]
     │  Returns record JSON
     ▼
-[getscript.js]
+[fetch.js]
     │  Store content → ralph.db (script_cache)
     │  Write file → WIP/<table>_<name>.js
     ▼
@@ -37,9 +37,9 @@ ServiceNow scripts (business rules, script includes, UI actions, etc.) are edite
 
 ## Components
 
-### 1. getscript.js
+### 1. fetch.js
 
-**Location:** `tools/getscript/getscript.js`
+**Location:** `tools/fetch/fetch.js`
 
 The CLI entry point. Reads credentials from `.secrets`, resolves the correct script field via the DB, checks the cache, fetches from SNOW if needed, and writes the output file.
 
@@ -96,7 +96,7 @@ CREATE TABLE script_cache (
 
 ### 3. seed-script-fields.js
 
-**Location:** `tools/getscript/seed-script-fields.js`
+**Location:** `tools/fetch/seed-script-fields.js`
 
 One-time (and refresh) script that populates the `script_fields` table from a raw MCP tool result file. The input is the JSON output from querying `sys_dictionary` where `internal_type.label LIKE Script`.
 
@@ -156,6 +156,6 @@ No other runtime dependencies. Node.js built-ins only (`fs`, `path`).
 |---|---|
 | Name field only | Queries by `name=<value>`. Tables that identify records differently (e.g. `short_description`) are not supported. |
 | First match only | If multiple records share the same `name`, the first is used. |
-| No push/write-back | `getscript` is read-only. There is no `putscript` to write local changes back to SNOW. |
+| No push/write-back | `fetch` is read-only. There is no write-back to push local changes to SNOW. |
 | Cache staleness | Cached content reflects what was in SNOW at `fetched_at`. Use `--fresh` to get current content. |
 | script_fields seeding | If new script-type fields are added to the instance, the DB must be re-seeded manually. |

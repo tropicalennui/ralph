@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 /**
- * getscript — fetch a script field from ServiceNow and save it to WIP/
+ * fetch — fetch a script field from ServiceNow and save it to WIP/
  *
  * Usage:
- *   node tools/getscript/getscript.js <table> <name> [--fresh] [--field <fieldname>]
+ *   node tools/fetch/fetch.js <table> <name> [--fresh] [--field <fieldname>]
  *
  * Examples:
- *   node tools/getscript/getscript.js sys_script_include "MyScriptInclude"
- *   node tools/getscript/getscript.js sys_ui_action "My UI Action" --field client_script_v2
- *   node tools/getscript/getscript.js sys_script_include "MyScriptInclude" --fresh
+ *   node tools/fetch/fetch.js sys_script_include "MyScriptInclude"
+ *   node tools/fetch/fetch.js sys_ui_action "My UI Action" --field client_script_v2
+ *   node tools/fetch/fetch.js sys_script_include "MyScriptInclude" --fresh
  *
  * Flags:
  *   --fresh          Skip cache, always fetch from SNOW
@@ -93,7 +93,7 @@ async function getScriptField(conn, table, preferredField) {
   if (rows.length === 0) {
     throw new Error(
       `No script fields found for table "${table}" in the local DB.\n` +
-      `Re-seed with: node tools/getscript/seed-script-fields.js <result-file>`
+      `Re-seed with: node tools/fetch/seed-script-fields.js <result-file>`
     );
   }
 
@@ -136,7 +136,7 @@ async function main() {
   const args = process.argv.slice(2);
 
   if (args.length < 2 || args[0] === "--help" || args[0] === "-h") {
-    console.log("Usage: node tools/getscript/getscript.js <table> <name> [--fresh] [--field <fieldname>]");
+    console.log("Usage: node tools/fetch/fetch.js <table> <name> [--fresh] [--field <fieldname>]");
     process.exit(args.length < 2 ? 1 : 0);
   }
 

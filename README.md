@@ -28,7 +28,7 @@ Press a keyboard shortcut in Edge and the current page is instantly captured as 
 ### Igloo
 Mirror ServiceNow tables into a local database. Once synced, you can query your SNOW data instantly from the terminal — no network, no rate limits, no waiting.
 
-### getscript
+### Fetch
 Pull any script from ServiceNow and drop it straight into your working folder, ready to edit and review in VS Code.
 
 ### Slash commands
@@ -40,10 +40,10 @@ A pre-commit hook that catches sensitive values (instance URLs, credentials, acc
 ## Prerequisites
 
 - [Node.js](https://nodejs.org/) v18 or later
-- [Claude Code](https://claude.ai/code) — VSCode extension
-- A [Jira Cloud](https://www.atlassian.com/software/jira) account with an API token
-- A [ServiceNow PDI](https://developer.servicenow.com/) (Personal Developer Instance) with a service account
-- [Obsidian](https://obsidian.md/) — optional, but highly recommended, for the Documentation vault
+- [Claude Code](https://claude.ai/code) — VSCode extension or desktop app
+- **Jira Cloud** — A project with an API token. To create a token: Atlassian account → **Security** → **API tokens** → **Create API token**. Note your subdomain (e.g. `yourname.atlassian.net`), project key, and account ID (found in your Atlassian profile URL).
+- **ServiceNow PDI** — A free Personal Developer Instance from [developer.servicenow.com](https://developer.servicenow.com/). Register, request an instance, then create a dedicated service account (e.g. `svc.claude`) with the `snc_readonly` role for read-only access, or `admin` if you want full access.
+- [Obsidian](https://obsidian.md/) — optional, but recommended. Download and install, then open the `Documentation/` folder as a vault. No extra plugins are required to get started.
 
 ## Setup
 
@@ -106,6 +106,16 @@ To get a Jira API token: go to **Atlassian account settings → Security → API
 
 Open the Command Palette and run **Claude Code: Open**. Claude will load `.claude/CLAUDE.md` and `.claude/CLAUDE.local.md` automatically, and the Jira and ServiceNow MCP servers will start on demand.
 
+### 7. Load workspace conventions into memory
+
+In the Claude Code chat, run:
+
+```
+/setup-memory
+```
+
+This reads the workspace conventions from `.claude/CLAUDE.conventions.md` and saves them to Claude's local memory so they persist across sessions. Run this once after first setup, and again if conventions change.
+
 ---
 
 ## Workspace layout
@@ -117,7 +127,7 @@ Ralph/
 │   └── CLAUDE.local.md             # Your instance config (gitignored)
 ├── mcp-jira/                       # Custom Jira MCP server
 ├── mcp-snow/                       # Custom ServiceNow MCP server
-├── tools/                          # Utility tools (Yoink, etc.)
+├── tools/                          # Utility tools (Yoink, Fetch, Igloo, etc.)
 └── Documentation/                  # Obsidian vault root
     ├── Features/                   # Technical design documents
     ├── Ideas/                      # Feature ideas and backlog

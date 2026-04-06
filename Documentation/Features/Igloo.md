@@ -163,7 +163,7 @@ Every mirrored table has this shape:
 
 | Column | Type | Notes |
 |---|---|---|
-| `instance` | VARCHAR | Hostname prefix, e.g. `dev200264` |
+| `instance` | VARCHAR | Hostname prefix, e.g. `dev123456` |
 | `sys_id` | VARCHAR | SNOW record sys_id |
 | *(schema fields)* | *(mapped)* | One column per SNOW field |
 | `<ref>_dv` | VARCHAR | Display value for each reference field |

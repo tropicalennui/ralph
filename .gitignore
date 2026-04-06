@@ -7,6 +7,8 @@ Documentation/.obsidian/
 Documentation/Ideas/
 Documentation/Knowledge/Yoinked/*
 !Documentation/Knowledge/Yoinked/.gitkeep
+Documentation/Recommendations/*
+!Documentation/Recommendations/.gitkeep
 WIP/
 ralph.db
 snow.db

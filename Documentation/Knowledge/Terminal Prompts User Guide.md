@@ -6,22 +6,6 @@ Quick reference for CLI tools that run directly in the VS Code terminal. These d
 
 ---
 
-## Yoink server
-
-Start and stop the local server that receives page captures from the browser extension.
-
-```bash
-# Start (runs in foreground — open a dedicated terminal)
-npm run yoink:start
-
-# Stop
-npm run yoink:stop
-```
-
-The server listens on `http://127.0.0.1:3737`. Keep this terminal open while capturing pages.
-
----
-
 ## Fetch
 
 Fetch a script from ServiceNow and save it to `WIP/`.

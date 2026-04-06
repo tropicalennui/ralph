@@ -15,7 +15,7 @@ Ralph/
 │   └── CLAUDE.local.md    # Instance-specific config (gitignored)
 ├── mcp-jira/              # Custom Jira MCP server (Node.js)
 ├── mcp-snow/              # Custom ServiceNow MCP server (Node.js)
-├── tools/                 # Utility tools (Yoink server, etc.)
+├── tools/                 # Utility tools (Fetch, Igloo, Snowsync, etc.)
 ├── .githooks/             # Git hooks (PII pre-commit check)
 └── Documentation/         # Obsidian vault
     ├── Features/          # Technical design documents
@@ -29,7 +29,6 @@ Ralph/
 |---|---|---|
 | Jira | MCP server (`mcp-jira/`) | [[Jira MCP Server]] |
 | ServiceNow | MCP server (`mcp-snow/`) | [[ServiceNow MCP Server]] |
-| Yoink | Edge extension + Node server | [[Yoink]] |
 | Slash commands | `.claude/commands/*.md` | [[Slash Commands]] |
 | PII guardrails | `.githooks/pre-commit` | [[PII Guardrails]] |
 | Documentation | Obsidian vault | [[Obsidian Integration]] |
@@ -37,7 +36,7 @@ Ralph/
 
 ## Testing
 
-No automated tests at this level. Ralph is a workspace configuration — testing is per feature. Run `npm test` from the repo root to execute all automated tests across `mcp-jira`, `mcp-snow`, and `tools/yoink/server`.
+No automated tests at this level. Ralph is a workspace configuration — testing is per feature. Run `npm test` from the repo root to execute all automated tests across `mcp-jira`, `mcp-snow`, and `tools/`.
 
 ## Conventions
 

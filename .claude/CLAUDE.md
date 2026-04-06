@@ -12,7 +12,7 @@ Ralph/
 │   └── CLAUDE.local.md        # Local instance config (gitignored — see CLAUDE.local.md.example)
 ├── mcp-jira/             # Custom Jira MCP server
 ├── mcp-snow/             # Custom ServiceNow MCP server
-├── tools/                # Utility tools (Yoink, etc.)
+├── tools/                # Utility tools (Fetch, Igloo, Snowsync, etc.)
 └── Documentation/        # Obsidian vault root
 ```
 

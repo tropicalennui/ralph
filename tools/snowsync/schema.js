@@ -8,21 +8,7 @@
  * (e.g. sys_updated_on from sys_metadata) are included.
  */
 
-const SNOW_TYPE_MAP = {
-  boolean:    "BOOLEAN",
-  integer:    "INTEGER",
-  float:      "DOUBLE",
-  decimal:    "DOUBLE",
-  currency:   "DOUBLE",
-  currency2:  "DOUBLE",
-  price:      "DOUBLE",
-  glide_date_time: "TIMESTAMP",
-  glide_date: "DATE",
-  reference:  "VARCHAR",
-};
-
-// sys_updated_on is stored as VARCHAR for reliable string comparison
-const FORCE_VARCHAR = new Set(["sys_updated_on"]);
+const { mapSnowType } = require("./lib");
 
 function strVal(f) {
   if (f == null) return null;
@@ -91,9 +77,7 @@ async function fetchSchema(auth, snowBase, tableName) {
     const itype   = strVal(r.internal_type) ?? "";
     if (!element) continue;
 
-    const duckdbType = FORCE_VARCHAR.has(element)
-      ? "VARCHAR"
-      : (SNOW_TYPE_MAP[itype] ?? "VARCHAR");
+    const duckdbType = mapSnowType(element, itype);
 
     if (!byTable[tbl]) byTable[tbl] = [];
     byTable[tbl].push({ element, duckdbType, isReference: itype === "reference" });

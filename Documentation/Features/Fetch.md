@@ -150,6 +150,18 @@ No other runtime dependencies. Node.js built-ins only (`fs`, `path`).
 
 ---
 
+## Testing
+
+**Location:** `tools/fetch/test/lib.test.js`  
+**Run:** `npm test` from the repo root
+
+Pure functions are extracted into `tools/fetch/lib.js` and tested without DuckDB or network dependencies.
+
+| Suite | What's covered |
+|---|---|
+| `parseSecrets` | Key=value parsing; blank lines ignored; comment lines ignored; lines without `=` ignored; values containing `=` preserved; empty input returns `{}` |
+| `resolveField` | Returns `--field` value immediately when provided; throws when no rows; returns single field; prefers field named `script` when multiple rows present; throws with `--field` options listed when disambiguation required |
+
 ## Limitations & Known Constraints
 
 | Constraint | Detail |

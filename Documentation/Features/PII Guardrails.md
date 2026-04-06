@@ -23,6 +23,15 @@ On each commit, the hook:
 
 If a match is intentional, the user can temporarily remove the pattern from `.pii-patterns`, commit, then restore it. The hook does not support inline suppression or `--no-verify` bypass by convention.
 
+## Testing
+
+No automated tests. The hook is a short bash script; manual testing is straightforward:
+
+1. Add a test pattern to `.pii-patterns` (e.g. `TESTSECRET`)
+2. Stage a file containing that string
+3. Attempt `git commit` — the commit should be blocked with the matching line printed
+4. Remove the test pattern and unstage the file
+
 ## Files
 
 | File | Purpose | Tracked |

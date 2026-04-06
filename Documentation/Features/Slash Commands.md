@@ -42,6 +42,10 @@ Steps executed in order:
 4. **Push** — `git push origin master`; stops and reports on failure, never force-pushes
 5. **Report** — prints commit count, HEAD SHA, and remote URL
 
+## Testing
+
+No automated tests. Slash commands are Markdown prompt files interpreted by Claude at runtime — there is no executable code to unit test. Manual testing: invoke the command in Claude Code and verify it follows the documented steps correctly.
+
 ## Adding New Commands
 
 1. Create `.claude/commands/<name>.md`

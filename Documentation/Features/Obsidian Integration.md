@@ -49,6 +49,10 @@ user-guide: "[[User Guide Name]]"
 type: User Guide
 ```
 
+## Testing
+
+No automated tests. This is a documentation structure and convention feature — there is no executable code. Verification is visual: open the vault in Obsidian and confirm templates, plugins, and folder structure are working as expected.
+
 ## Conventions
 
 - Every feature must have a design doc in `Documentation/Features/` and a user guide in `Documentation/Knowledge/`

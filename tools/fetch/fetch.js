@@ -21,6 +21,7 @@
 const fs = require("fs");
 const path = require("path");
 const { getConnection, close } = require("../db");
+const { parseSecrets, resolveField } = require("./lib");
 
 const ROOT = path.join(__dirname, "..", "..");
 const WIP_DIR = path.join(ROOT, "WIP");
@@ -31,16 +32,7 @@ const SECRETS_FILE = path.join(ROOT, ".secrets");
 // ---------------------------------------------------------------------------
 
 function loadSecrets() {
-  const lines = fs.readFileSync(SECRETS_FILE, "utf8").split("\n");
-  const env = {};
-  for (const line of lines) {
-    const trimmed = line.trim();
-    if (!trimmed || trimmed.startsWith("#")) continue;
-    const eq = trimmed.indexOf("=");
-    if (eq === -1) continue;
-    env[trimmed.slice(0, eq).trim()] = trimmed.slice(eq + 1).trim();
-  }
-  return env;
+  return parseSecrets(fs.readFileSync(SECRETS_FILE, "utf8"));
 }
 
 // ---------------------------------------------------------------------------
@@ -82,31 +74,11 @@ async function fetchFromSnow(secrets, table, name, field) {
 // ---------------------------------------------------------------------------
 
 async function getScriptField(conn, table, preferredField) {
-  if (preferredField) return preferredField;
-
   const result = await conn.runAndReadAll(
     `SELECT field_name, field_type FROM script_fields WHERE table_name = $1 ORDER BY field_type`,
     [table]
   );
-  const rows = result.getRows();
-
-  if (rows.length === 0) {
-    throw new Error(
-      `No script fields found for table "${table}" in the local DB.\n` +
-      `Re-seed with: node tools/fetch/seed-script-fields.js <result-file>`
-    );
-  }
-
-  if (rows.length === 1) return rows[0][0];
-
-  // Multiple fields — prefer one literally named "script", otherwise list options
-  const scriptField = rows.find(([f]) => f === "script");
-  if (scriptField) return scriptField[0];
-
-  const options = rows.map(([f, t]) => `  --field ${f}  (${t})`).join("\n");
-  throw new Error(
-    `Table "${table}" has multiple script fields. Specify one with --field:\n${options}`
-  );
+  return resolveField(result.getRows(), table, preferredField);
 }
 
 async function getCached(conn, table, name, field) {

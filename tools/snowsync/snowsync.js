@@ -21,6 +21,7 @@ const path = require("path");
 const yaml = require("js-yaml");
 const { fetchSchema } = require("./schema");
 const { open, close, ensureTable } = require("./snowdb");
+const { val, dv, buildValues, classifyRecord } = require("./lib");
 
 const ROOT        = path.join(__dirname, "..", "..");
 const CONFIG_FILE = path.join(ROOT, "snowdb.config.yaml");
@@ -82,32 +83,8 @@ async function fetchAllRecords(auth, snowBase, tableName, query, fields) {
 }
 
 // ---------------------------------------------------------------------------
-// Field value extraction (sysparm_display_value=all returns {value, display_value})
-// ---------------------------------------------------------------------------
-
-function val(f) {
-  if (f == null) return null;
-  const v = typeof f === "object" ? (f.value ?? null) : f;
-  return v === "" ? null : v;
-}
-
-function dv(f) {
-  if (f == null) return null;
-  return typeof f === "object" ? (f.display_value ?? f.value ?? null) : f;
-}
-
-// ---------------------------------------------------------------------------
 // DB write helpers
 // ---------------------------------------------------------------------------
-
-function buildValues(record, columns) {
-  return columns.map(c => {
-    if (c.name.endsWith("_dv")) {
-      return dv(record[c.name.slice(0, -3)]);
-    }
-    return val(record[c.name]);
-  });
-}
 
 async function insertRecord(conn, tableName, instance, sysId, record, columns) {
   const colNames   = ["instance", "sys_id", ...columns.map(c => `"${c.name}"`)].join(", ");
@@ -208,11 +185,12 @@ async function syncTable(conn, auth, snowBase, instance, tableConfig) {
 
     const snowUpdatedOn = val(record.sys_updated_on);
     const prior = existingMap.get(sysId);
+    const action = classifyRecord(prior, snowUpdatedOn);
 
-    if (!prior) {
+    if (action === "insert") {
       await insertRecord(conn, tableName, instance, sysId, record, activeColumns);
       inserted++;
-    } else if (prior.deleted || prior.sysUpdatedOn !== snowUpdatedOn) {
+    } else if (action === "update") {
       await updateRecord(conn, tableName, instance, sysId, record, activeColumns);
       updated++;
     } else {

@@ -26,6 +26,10 @@ The `.githooks/pre-commit` hook (see [[PII Guardrails]]) scans staged content ag
 
 The `/publish` slash command pushes the current state of `master` to the GitHub remote. See [[Slash Commands]] for implementation details.
 
+## Testing
+
+No automated tests. This is a configuration and convention feature. The PII pre-commit hook (see [[PII Guardrails]]) is the primary enforcement mechanism and is manually verified.
+
 ## Branch Convention
 
 - `master` is the published branch

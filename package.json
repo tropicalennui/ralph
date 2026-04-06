@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Ralph — root test runner",
   "scripts": {
-    "test": "node --test mcp-jira/test/**/*.test.js mcp-snow/test/**/*.test.js tools/yoink/server/test/**/*.test.js",
+    "test": "node --test mcp-jira/test/**/*.test.js mcp-snow/test/**/*.test.js tools/yoink/server/test/**/*.test.js tools/fetch/test/**/*.test.js tools/snowsync/test/**/*.test.js",
     "yoink:start": "node tools/yoink/server/server.js",
     "yoink:stop": "kill $(cat /tmp/yoink-server.pid) 2>/dev/null && rm /tmp/yoink-server.pid || echo 'Yoink server not running'"
   }

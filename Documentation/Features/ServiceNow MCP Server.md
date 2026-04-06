@@ -57,3 +57,15 @@ Uses `sysparm_display_value=false` by default to return raw values rather than d
 ## Error Handling
 
 All errors caught and returned as `{ isError: true }` MCP responses. ServiceNow error messages are extracted from `error.message` or `error.detail` in the response body.
+
+## Testing
+
+**Location:** `mcp-snow/test/lib.test.js`  
+**Run:** `npm test` from the repo root
+
+Tests use Node.js built-in `node:test` with a mock `snowFn` — no network calls, no credentials required.
+
+| Suite | What's covered |
+|---|---|
+| `TOOLS` | Correct number of tools exposed; all expected tool names present; each tool has `name`, `description`, and `inputSchema`; each tool declares at least one required field |
+| `createHandler` | Unknown tool returns `isError`; network error from `snowFn` is caught and surfaced; `snow_query_records` defaults to `sysparm_limit=10`; custom `limit` param is respected; `snow_create_record` routes to correct HTTP method and path |

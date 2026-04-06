@@ -19,8 +19,9 @@ Ralph/
 ### Obsidian Vault
 
 The vault root is the `Documentation/` folder. Plugins:
-- **Templater** — installed
-- **Tasks** — intended, not yet installed
+- **Templater** — installed. Templates in `Documentation/zTemplates/`. Folder template auto-applies to `Ideas/`.
+- **Tasks** — installed. Format: Dataview. Custom statuses: `/` = In Progress, `-` = Cancelled.
+- **Dataview** — installed.
 
 ## Integrations
 

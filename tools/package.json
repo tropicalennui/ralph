@@ -1,0 +1,13 @@
+{
+  "name": "ralph-tools",
+  "version": "1.0.0",
+  "description": "Shared tooling for Ralph workspace",
+  "type": "commonjs",
+  "scripts": {
+    "getscript": "node getscript/getscript.js"
+  },
+  "dependencies": {
+    "@duckdb/node-api": "^1.5.1-r.1",
+    "js-yaml": "^4.1.0"
+  }
+}
